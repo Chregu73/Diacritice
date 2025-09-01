@@ -74,13 +74,15 @@ Ihre Registry-Struktur sollte am Ende so aussehen:
 
 ## Instalația
 
-Descărcați fișierele din repository, fie prin Download ZIP de pe pagina `<> Code`, fie direct de [aici](https://github.com/Chregu73/Diacritice/archive/refs/heads/main.zip). Dezarhivați fișierele `diacritice.ico` și `Diacritice.exe` dintr-unul dintre cele două dosare, în funcție de limba dorită, într-un dosar la alegere, de exemplu Documente `C:\Users\[User]\Documents\`.
+Descărcați repository-ul, fie prin Download ZIP de pe pagina `<> Code`, fie direct de [aici](https://github.com/Chregu73/Diacritice/archive/refs/heads/main.zip). Dezarhivați fișierele `diacritice.ico` și `Diacritice.exe` dintr-unul dintre cele două dosare, în funcție de limba dorită, într-un dosar la alegere, de exemplu Documente `C:\Users\[User]\Documents\`.
 
-Adăugarea unei pictograme în meniul contextual
+### Adăugarea unei pictograme în meniul contextual
+
 Puteți adăuga o pictogramă (icon) la intrarea din meniul contextual în Windows Explorer, prin ajustarea corespunzătoare a Registrului Windows (Registry).
 
-1. Cheia de Registru pentru aplicația dumneavoastră
-Creați o nouă cheie direct sub HKEY_CLASSES_ROOT\*\shell. Denumiți această cheie `Diacritice`.
+### 1. Cheia de Registru pentru aplicația dumneavoastră
+
+Creați o nouă cheie direct sub **`HKEY_CLASSES_ROOT\*\shell`**. Denumiți această cheie `Diacritice`.
 
 <pre>
 HKEY_CLASSES_ROOT
@@ -91,7 +93,8 @@ HKEY_CLASSES_ROOT
 
 Această cheie reprezintă aplicația dumneavoastră în meniul contextual. Valoarea sa implicită definește textul care va fi afișat în meniul contextual, de exemplu `Înlocuire diacritice`.
 
-2. Cheia de comandă
+### 2. Cheia de comandă
+
 În cadrul cheii create anterior (Diacritice), trebuie să creați o altă sub-cheie numită command. Această cheie conține comanda propriu-zisă care este executată atunci când utilizatorul face clic pe elementul dumneavoastră de meniu.
 
 <pre>
@@ -104,7 +107,8 @@ HKEY_CLASSES_ROOT
 
 Valoarea implicită a cheii command trebuie să conțină calea către fișierul dumneavoastră executabil (.exe) și placeholder-ul "%1".
 
-3. Adăugarea intrării pentru pictogramă
+### 3. Adăugarea intrării pentru pictogramă
+
 În cadrul aceleiași chei AplicațiaDvs, dar în afara sub-cheii command, creați o nouă valoare de șir de caractere cu numele Icon.
 
 Cheie: HKEY_CLASSES_ROOT\*\shell\Diacritice
