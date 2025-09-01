@@ -1,5 +1,14 @@
 # Diacritice
-Create a context-menu in Windows-Explorer for translate ANSII-text-files to UTF-8 formattet text with the corected romanian Diacritics
+
+**en:** `Create a context-menu in Windows-Explorer for translate ANSII-text-files to UTF-8 formattet text with the corected romanian Diacritics`
+
+**de:** `Erstellen Sie einen Kontextmenüeintrag im Windows-Explorer, um ASCII-Textdateien in UTF-8-formatierten Text mit den korrekten rumänischen diakritischen Zeichen zu übersetzen`
+
+**ro:** `Creați o intrare în meniul contextual în Windows Explorer pentru a traduce fișierele text ASCII în text formatat UTF-8 cu diacriticele corecte în limba românească`
+
+## Installation
+
+Laden Sie das Repository herunter, entweder im Repository auf `<> Code` und dann `Download ZIP`, oder direkt [hier](https://github.com/Chregu73/Diacritice/archive/refs/heads/main.zip). Entpacken Sie die Dateien diacritice.ico und Diacritice.exe aus einem der beiden Verzeichnisse, je nach gewünschter Sprache in ein Verzeichnis Ihrer Wahl, z.B. Dokumente `C:\Users\[User]\Documents\`.
 
 ### Symbol in das Kontextmenü einfügen
 
@@ -18,7 +27,7 @@ HKEY_CLASSES_ROOT
 │       └── IhreAnwendung  (<- Das ist der erste Schlüssel, den Sie erstellen)
 </pre>
 
-Dieser Schlüssel repräsentiert Ihre Anwendung im Kontextmenü. Sein **Standardwert** legt den Text fest, der im Kontextmenü angezeigt wird, z. B. "Öffnen mit PureBasic".
+Dieser Schlüssel repräsentiert Ihre Anwendung im Kontextmenü. Sein **Standardwert** legt den Text fest, der im Kontextmenü angezeigt wird, z. B. "Diacritice ersetzen".
 
 ---
 
@@ -54,7 +63,7 @@ Ihre Registry-Struktur sollte am Ende so aussehen:
 
 **Schlüssel:** `HKEY_CLASSES_ROOT\*\shell\IhreAnwendung`
 - **Name:** `(Standard)`
-- **Wert:** `"Öffnen mit PureBasic"` (oder ein anderer gewünschter Text)
+- **Wert:** `"Diacritice ersetzen"` (oder ein anderer gewünschter Text)
 - **Name:** `Icon`
 - **Wert:** `"C:\Pfad\Zu\Ihrer\Anwendung.exe"` (oder `.ico`)
 
