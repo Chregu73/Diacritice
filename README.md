@@ -18,28 +18,28 @@ Sie können Ihrem Kontextmenü-Eintrag im Windows Explorer ein Symbol (Icon) hin
 
 ### 1. Registrierungsschlüssel für Ihre Anwendung
 
-Erstellen Sie einen neuen Schlüssel direkt unter **`HKEY_CLASSES_ROOT\*\shell`**. Diesen Schlüssel benennen Sie, wie Sie möchten, zum Beispiel `IhreAnwendung`.
+Erstellen Sie einen neuen Schlüssel direkt unter **`HKEY_CLASSES_ROOT\*\shell`**. Diesen Schlüssel benennen Sie `Diacritice`.
 
 <pre>
 HKEY_CLASSES_ROOT
 ├── *
 │   └── shell
-│       └── IhreAnwendung  (<- Das ist der erste Schlüssel, den Sie erstellen)
+│       └── Diacritice  (<- Das ist der erste Schlüssel, den Sie erstellen)
 </pre>
 
-Dieser Schlüssel repräsentiert Ihre Anwendung im Kontextmenü. Sein **Standardwert** legt den Text fest, der im Kontextmenü angezeigt wird, z. B. "Diacritice ersetzen".
+Dieser Schlüssel repräsentiert Ihre Anwendung im Kontextmenü. Sein **Standardwert** legt den Text fest, der im Kontextmenü angezeigt wird, z. B. `Diacritice ersetzen`.
 
 ---
 
 ### 2. Befehlsschlüssel
 
-Innerhalb des gerade erstellten Schlüssels (`IhreAnwendung`) müssen Sie einen weiteren Unterschlüssel namens **`command`** erstellen. Dieser Schlüssel enthält den eigentlichen Befehl, der ausgeführt wird, wenn der Benutzer auf Ihren Menüpunkt klickt.
+Innerhalb des gerade erstellten Schlüssels (`Diacritice`) müssen Sie einen weiteren Unterschlüssel namens **`command`** erstellen. Dieser Schlüssel enthält den eigentlichen Befehl, der ausgeführt wird, wenn der Benutzer auf Ihren Menüpunkt klickt.
 
 <pre>
 HKEY_CLASSES_ROOT
 ├── *
 │   └── shell
-│       └── IhreAnwendung
+│       └── Diacritice
 │           └── command   (<- Das ist der zweite Schlüssel)
 </pre>
 
@@ -51,9 +51,9 @@ Der **Standardwert** des `command`-Schlüssels muss den Pfad zu Ihrer ausführba
 
 Innerhalb des gleichen `IhreAnwendung`-Schlüssels, aber außerhalb des `command`-Unterschlüssels, erstellen Sie einen neuen **Zeichenfolgenwert** mit dem Namen **`Icon`**.
 
-- **Schlüssel:** `HKEY_CLASSES_ROOT\*\shell\IhreAnwendung`
+- **Schlüssel:** `HKEY_CLASSES_ROOT\*\shell\Diacritice`
 - **Name:** `Icon`
-- **Wert:** `"C:\Pfad\Zu\Ihrer\Icon-Datei.ico"`
+- **Wert:** `"C:\Pfad\Zu\Ihrer\diacritice.ico"`
 
 ---
 
@@ -61,12 +61,73 @@ Innerhalb des gleichen `IhreAnwendung`-Schlüssels, aber außerhalb des `command
 
 Ihre Registry-Struktur sollte am Ende so aussehen:
 
-**Schlüssel:** `HKEY_CLASSES_ROOT\*\shell\IhreAnwendung`
+**Schlüssel:** `HKEY_CLASSES_ROOT\*\shell\Diacritice`
 - **Name:** `(Standard)`
 - **Wert:** `"Diacritice ersetzen"` (oder ein anderer gewünschter Text)
 - **Name:** `Icon`
-- **Wert:** `"C:\Pfad\Zu\Ihrer\Anwendung.exe"` (oder `.ico`)
+- **Wert:** `"C:\Pfad\Zu\Ihrer\diacritice.ico"`
 
-**Schlüssel:** `HKEY_CLASSES_ROOT\*\shell\IhreAnwendung\command`
+**Schlüssel:** `HKEY_CLASSES_ROOT\*\shell\Diacritice\command`
 - **Name:** `(Standard)`
-- **Wert:** `"C:\Pfad\Zu\Ihrer\Anwendung.exe" "%1"`
+- **Wert:** `"C:\Pfad\Zu\Ihrer\Diacritice.exe" "%1"`
+
+
+## Instalația
+
+Descărcați fișierele din repository, fie prin Download ZIP de pe pagina `<> Code`, fie direct de [aici](https://github.com/Chregu73/Diacritice/archive/refs/heads/main.zip). Dezarhivați fișierele `diacritice.ico` și `Diacritice.exe` dintr-unul dintre cele două dosare, în funcție de limba dorită, într-un dosar la alegere, de exemplu Documente `C:\Users\[User]\Documents\`.
+
+Adăugarea unei pictograme în meniul contextual
+Puteți adăuga o pictogramă (icon) la intrarea din meniul contextual în Windows Explorer, prin ajustarea corespunzătoare a Registrului Windows (Registry).
+
+1. Cheia de Registru pentru aplicația dumneavoastră
+Creați o nouă cheie direct sub HKEY_CLASSES_ROOT\*\shell. Denumiți această cheie `Diacritice`.
+
+<pre>
+HKEY_CLASSES_ROOT
+├── *
+│   └── shell
+│       └── Diacritice  (<- Aceasta este prima cheie pe care o creați)
+</pre>
+
+Această cheie reprezintă aplicația dumneavoastră în meniul contextual. Valoarea sa implicită definește textul care va fi afișat în meniul contextual, de exemplu `Înlocuire diacritice`.
+
+2. Cheia de comandă
+În cadrul cheii create anterior (Diacritice), trebuie să creați o altă sub-cheie numită command. Această cheie conține comanda propriu-zisă care este executată atunci când utilizatorul face clic pe elementul dumneavoastră de meniu.
+
+<pre>
+HKEY_CLASSES_ROOT
+├── *
+│   └── shell
+│       └── Diacritice
+│           └── command   (<- Aceasta este a doua cheie)
+</pre>
+
+Valoarea implicită a cheii command trebuie să conțină calea către fișierul dumneavoastră executabil (.exe) și placeholder-ul "%1".
+
+3. Adăugarea intrării pentru pictogramă
+În cadrul aceleiași chei AplicațiaDvs, dar în afara sub-cheii command, creați o nouă valoare de șir de caractere cu numele Icon.
+
+Cheie: HKEY_CLASSES_ROOT\*\shell\Diacritice
+
+Nume: Icon
+
+Valoare: "C:\Calea\Către\Fișierul-Pictogramă.ico"
+
+Rezumatul structurii
+Structura registrului dumneavoastră ar trebui să arate astfel la final:
+
+Cheie: HKEY_CLASSES_ROOT\*\shell\Diacritice
+
+Nume: (Implicit)
+
+Valoare: "Înlocuire diacritice" (sau un alt text dorit)
+
+Nume: Icon
+
+Valoare: "C:\Calea\Către\diacritice.ico"
+
+Cheie: HKEY_CLASSES_ROOT\*\shell\Diacritice\command
+
+Nume: (Implicit)
+
+Valoare: "C:\Calea\Către\Diacritice.exe" "%1"
