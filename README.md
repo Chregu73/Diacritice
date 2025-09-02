@@ -6,6 +6,8 @@
 
 **ro:** `Creați o intrare în meniul contextual în Windows Explorer pentru a traduce fișierele text ASCII în text formatat UTF-8 cu diacriticele corecte în limba românească`
 
+![](kontextmenu.gif)
+
 ## Installation
 
 Laden Sie das Repository herunter, entweder im Repository auf `<> Code` und dann `Download ZIP`, oder direkt [hier](https://github.com/Chregu73/Diacritice/archive/refs/heads/main.zip). Entpacken Sie die Dateien diacritice.ico und Diacritice.exe aus einem der beiden Verzeichnisse, je nach gewünschter Sprache in ein Verzeichnis Ihrer Wahl, z.B. Dokumente `C:\Users\[User]\Documents\`.
@@ -73,7 +75,7 @@ Ihre Registry-Struktur sollte am Ende so aussehen:
 
 ## Benutzung
 
-Beim Rechtsklick auf eine Datei erscheint nun im Kontextmenu der Punkt ![](/assets/images/diacritice.gif)`Diacritice ersetzen`. Nach dem Klick auf diesen wird durch die weiteren Schritte geführt. Falls eine UTF-8 Datei erkannt wird, wird mit dem entsprechenden Hinweis abgebrochen.
+Beim Rechtsklick auf eine Datei erscheint nun im Kontextmenu der Punkt ![](diacritice.gif) `Diacritice ersetzen`. Nach dem Klick auf diesen wird durch die weiteren Schritte geführt. Falls eine UTF-8 Datei erkannt wird, wird mit dem entsprechenden Hinweis abgebrochen.
 
 Intern wird eine neue Datei erstellt, die Zeichen reingeschrieben, die alte Datei gelöscht und die Neue nach der Alten umbenannt. 
 
@@ -144,6 +146,6 @@ Structura registrului dumneavoastră ar trebui să arate astfel la final:
 
 ##Utilizare
 
-La clic dreapta pe un fișier, în meniul contextual va apărea opțiunea !(/assets/images/diacritice.ico)`Înlocuire diacritice`. După ce faceți clic pe aceasta, veți fi ghidat prin pașii următori. Dacă se detectează un fișier UTF-8, procesul va fi anulat cu o notificare corespunzătoare.
+La clic dreapta pe un fișier, în meniul contextual va apărea opțiunea ![](diacritice.gif) `Înlocuire diacritice`. După ce faceți clic pe aceasta, veți fi ghidat prin pașii următori. Dacă se detectează un fișier UTF-8, procesul va fi anulat cu o notificare corespunzătoare.
 
 Intern, un fișier nou este creat, caracterele sunt scrise în el, fișierul vechi este șters, iar cel nou este redenumit la fel ca cel vechi.
