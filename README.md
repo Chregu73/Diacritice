@@ -73,7 +73,7 @@ Ihre Registry-Struktur sollte am Ende so aussehen:
 
 ## Benutzung
 
-Beim Rechtsklick auf eine Datei erscheint nun im Kontextmenu der Punk ![](/assets/images/diacritice.gif)`Diacritice ersetzen`. Nach dem Klick auf diesen wird durch die weiteren Schritte geführt. Falls eine UTF-8 Datei erkannt wird, wird mit dem entsprechenden Hinweis abgebrochen.
+Beim Rechtsklick auf eine Datei erscheint nun im Kontextmenu der Punkt ![](/assets/images/diacritice.gif)`Diacritice ersetzen`. Nach dem Klick auf diesen wird durch die weiteren Schritte geführt. Falls eine UTF-8 Datei erkannt wird, wird mit dem entsprechenden Hinweis abgebrochen.
 
 Intern wird eine neue Datei erstellt, die Zeichen reingeschrieben, die alte Datei gelöscht und die Neue nach der Alten umbenannt. 
 
