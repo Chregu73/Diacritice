@@ -71,14 +71,21 @@ Ihre Registry-Struktur sollte am Ende so aussehen:
 - **Name:** `(Standard)`
 - **Wert:** `"C:\Pfad\Zu\Ihrer\Diacritice.exe" "%1"`
 
+## Benutzung
+
+Beim Rechtsklick auf eine Datei erscheint nun im Kontextmenu der Punk !(/assets/images/diacritice.ico)`Diacritice ersetzen`. Nach dem Klick auf diesen wird durch die weiteren Schritte geführt. Falls eine UTF-8 Datei erkannt wird, wird mit dem entsprechenden Hinweis abgebrochen.
+
+Intern wird eine neue Datei erstellt, die Zeichen reingeschrieben, die alte Datei gelöscht und die Neue nach der Alten umbenannt. 
 
 ## Instalația
 
-Descărcați repository-ul, fie prin Download ZIP de pe pagina `<> Code`, fie direct de [aici](https://github.com/Chregu73/Diacritice/archive/refs/heads/main.zip). Dezarhivați fișierele `diacritice.ico` și `Diacritice.exe` dintr-unul dintre cele două dosare, în funcție de limba dorită, într-un dosar la alegere, de exemplu Documente `C:\Users\[User]\Documents\`.
+Descărcați repository-ul, fie prin `Download ZIP` de pe buton `<> Code`, fie direct de [aici](https://github.com/Chregu73/Diacritice/archive/refs/heads/main.zip). Dezarhivați fișierele `diacritice.ico` și `Diacritice.exe` dintr-unul dintre cele două dosare, în funcție de limba dorită, într-un dosar la alegere, de exemplu Documente `C:\Users\[User]\Documents\`.
 
 ### Adăugarea unei pictograme în meniul contextual
 
 Puteți adăuga o pictogramă (icon) la intrarea din meniul contextual în Windows Explorer, prin ajustarea corespunzătoare a Registrului Windows (Registry).
+
+---
 
 ### 1. Cheia de Registru pentru aplicația dumneavoastră
 
@@ -91,11 +98,13 @@ HKEY_CLASSES_ROOT
 │       └── Diacritice  (<- Aceasta este prima cheie pe care o creați)
 </pre>
 
-Această cheie reprezintă aplicația dumneavoastră în meniul contextual. Valoarea sa implicită definește textul care va fi afișat în meniul contextual, de exemplu `Înlocuire diacritice`.
+Această cheie reprezintă aplicația dumneavoastră în meniul contextual. **Valoarea** sa **implicită** definește textul care va fi afișat în meniul contextual, de exemplu `Înlocuire diacritice`.
+
+---
 
 ### 2. Cheia de comandă
 
-În cadrul cheii create anterior (Diacritice), trebuie să creați o altă sub-cheie numită command. Această cheie conține comanda propriu-zisă care este executată atunci când utilizatorul face clic pe elementul dumneavoastră de meniu.
+În cadrul cheii create anterior (`Diacritice`), trebuie să creați o altă sub-cheie numită **`command`**. Această cheie conține comanda propriu-zisă care este executată atunci când utilizatorul face clic pe elementul dumneavoastră de meniu.
 
 <pre>
 HKEY_CLASSES_ROOT
@@ -105,33 +114,36 @@ HKEY_CLASSES_ROOT
 │           └── command   (<- Aceasta este a doua cheie)
 </pre>
 
-Valoarea implicită a cheii command trebuie să conțină calea către fișierul dumneavoastră executabil (.exe) și placeholder-ul "%1".
+**Valoarea implicită** a cheii `command` trebuie să conțină calea către fișierul dumneavoastră executabil (`.exe`) și placeholder-ul `"%1"`.
+
+---
 
 ### 3. Adăugarea intrării pentru pictogramă
 
-În cadrul aceleiași chei AplicațiaDvs, dar în afara sub-cheii command, creați o nouă valoare de șir de caractere cu numele Icon.
+În cadrul aceleiași chei `Diacritice`, dar în afara sub-cheii `command`, creați o nouă **valoare de șir de caractere** cu numele **`Icon`**.
 
-Cheie: HKEY_CLASSES_ROOT\*\shell\Diacritice
+- **Cheie:** `HKEY_CLASSES_ROOT\*\shell\Diacritice`
+- **Nume:** `Icon`
+- **Valoare:** `"C:\Calea\Către\diacritice.ico"`
 
-Nume: Icon
+---
 
-Valoare: "C:\Calea\Către\Fișierul-Pictogramă.ico"
+### Rezumatul structurii
 
-Rezumatul structurii
 Structura registrului dumneavoastră ar trebui să arate astfel la final:
 
-Cheie: HKEY_CLASSES_ROOT\*\shell\Diacritice
+**Cheie:** `HKEY_CLASSES_ROOT\*\shell\Diacritice`
+- **Nume:** `(Implicit)`
+- **Valoare:** `"Înlocuire diacritice"` (sau un alt text dorit)
+- **Nume:** `Icon`
+- **Valoare:** `"C:\Calea\Către\diacritice.ico"`
 
-Nume: (Implicit)
+**Cheie:** `HKEY_CLASSES_ROOT\*\shell\Diacritice\command`
+- **Nume:** `(Implicit)`
+- **Valoare:** `"C:\Calea\Către\Diacritice.exe" "%1"`
 
-Valoare: "Înlocuire diacritice" (sau un alt text dorit)
+##Utilizare
 
-Nume: Icon
+La clic dreapta pe un fișier, în meniul contextual va apărea opțiunea !(/assets/images/diacritice.ico)`Înlocuire diacritice`. După ce faceți clic pe aceasta, veți fi ghidat prin pașii următori. Dacă se detectează un fișier UTF-8, procesul va fi anulat cu o notificare corespunzătoare.
 
-Valoare: "C:\Calea\Către\diacritice.ico"
-
-Cheie: HKEY_CLASSES_ROOT\*\shell\Diacritice\command
-
-Nume: (Implicit)
-
-Valoare: "C:\Calea\Către\Diacritice.exe" "%1"
+Intern, un fișier nou este creat, caracterele sunt scrise în el, fișierul vechi este șters, iar cel nou este redenumit la fel ca cel vechi.
