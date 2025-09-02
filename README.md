@@ -142,7 +142,7 @@ Structura registrului dumneavoastră ar trebui să arate astfel la final:
 - **Nume:** `(Implicit)`
 - **Valoare:** `"C:\Calea\Către\Diacritice.exe" "%1"`
 
-##Utilizare
+### Utilizare
 
 La clic dreapta pe un fișier, în meniul contextual va apărea opțiunea ![](diacritice.gif) `Înlocuire diacritice`. După ce faceți clic pe aceasta, veți fi ghidat prin pașii următori. Dacă se detectează un fișier UTF-8, procesul va fi anulat cu o notificare corespunzătoare.
 
