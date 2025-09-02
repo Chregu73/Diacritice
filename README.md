@@ -8,6 +8,10 @@
 
 ![](kontextmenu.gif)
 
+## Problematik
+
+Noch immer sind die meisten Untertiteldateien, die Sie im Internet für die rumänische Sprache finden (meist `.srt`), nur im veralteten ASCII-Format erhältlich. Die rumänischen Sonderzeichen (Diacritice) werden dann weder im Texteditor noch auf dem Smartfernseher leserlich dargestellt. Das Programm `Diacritice` wandelt nun diese Zeichen mit einem Rechtsklick um!
+
 ## Installation
 
 Laden Sie das Repository herunter, entweder im Repository auf `<> Code` und dann `Download ZIP`, oder direkt [hier](https://github.com/Chregu73/Diacritice/archive/refs/heads/main.zip). Entpacken Sie die Dateien diacritice.ico und Diacritice.exe aus einem der beiden Verzeichnisse, je nach gewünschter Sprache in ein Verzeichnis Ihrer Wahl, z.B. Dokumente `C:\Users\[User]\Documents\`.
@@ -78,6 +82,10 @@ Ihre Registry-Struktur sollte am Ende so aussehen:
 Beim Rechtsklick auf eine Datei erscheint nun im Kontextmenu der Punkt ![](diacritice.gif) `Diacritice ersetzen`. Nach dem Klick auf diesen wird durch die weiteren Schritte geführt. Falls eine UTF-8 Datei erkannt wird, wird mit dem entsprechenden Hinweis abgebrochen.
 
 Intern wird eine neue Datei erstellt, die Zeichen reingeschrieben, die alte Datei gelöscht und die Neue nach der Alten umbenannt. 
+
+## Problema
+
+Încă, cele mai multe fișiere de subtitrare pe care le găsiți pe internet pentru limba română (de obicei `.srt`), sunt disponibile doar în formatul ASCII învechit. Caracterele românești (diacritice) nu sunt atunci afișate lizibil, nici în editorul de text, nici pe televizorul inteligent. Programul `Diacritice` convertește aceste caractere cu un singur clic dreapta!
 
 ## Instalația
 
