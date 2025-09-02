@@ -8,6 +8,9 @@
 
 ![](kontextmenu.gif)
 
+---
+---
+
 ## Problematik
 
 Noch immer sind die meisten Untertiteldateien, die Sie im Internet für die rumänische Sprache finden (meist `.srt`), nur im veralteten ASCII-Format erhältlich. Die rumänischen Sonderzeichen (Diacritice) werden dann weder im Texteditor noch auf dem Smartfernseher leserlich dargestellt. Das Programm `Diacritice` wandelt nun diese Zeichen mit einem Rechtsklick um!
@@ -19,8 +22,6 @@ Laden Sie das Repository herunter, entweder im Repository auf `<> Code` und dann
 ### Symbol in das Kontextmenü einfügen
 
 Sie können Ihrem Kontextmenü-Eintrag im Windows Explorer ein Symbol (Icon) hinzufügen, indem Sie die Windows-Registrierungsdatenbank (Registry) entsprechend anpassen.
-
----
 
 ### 1. Registrierungsschlüssel für Ihre Anwendung
 
@@ -34,8 +35,6 @@ HKEY_CLASSES_ROOT
 </pre>
 
 Dieser Schlüssel repräsentiert Ihre Anwendung im Kontextmenü. Sein **Standardwert** legt den Text fest, der im Kontextmenü angezeigt wird, z. B. `Diacritice ersetzen`.
-
----
 
 ### 2. Befehlsschlüssel
 
@@ -51,8 +50,6 @@ HKEY_CLASSES_ROOT
 
 Der **Standardwert** des `command`-Schlüssels muss den Pfad zu Ihrer ausführbaren Datei (`.exe`) und den Platzhalter `"%1"` enthalten.
 
----
-
 ### 3. Icon-Eintrag hinzufügen
 
 Innerhalb des gleichen `IhreAnwendung`-Schlüssels, aber außerhalb des `command`-Unterschlüssels, erstellen Sie einen neuen **Zeichenfolgenwert** mit dem Namen **`Icon`**.
@@ -60,8 +57,6 @@ Innerhalb des gleichen `IhreAnwendung`-Schlüssels, aber außerhalb des `command
 - **Schlüssel:** `HKEY_CLASSES_ROOT\*\shell\Diacritice`
 - **Name:** `Icon`
 - **Wert:** `"C:\Pfad\Zu\Ihrer\diacritice.ico"`
-
----
 
 ### Zusammenfassung der Struktur
 
@@ -83,6 +78,9 @@ Beim Rechtsklick auf eine Datei erscheint nun im Kontextmenu der Punkt ![](diacr
 
 Intern wird eine neue Datei erstellt, die Zeichen reingeschrieben, die alte Datei gelöscht und die Neue nach der Alten umbenannt. 
 
+---
+---
+
 ## Problema
 
 Încă, cele mai multe fișiere de subtitrare pe care le găsiți pe internet pentru limba română (de obicei `.srt`), sunt disponibile doar în formatul ASCII învechit. Caracterele românești (diacritice) nu sunt atunci afișate lizibil, nici în editorul de text, nici pe televizorul inteligent. Programul `Diacritice` convertește aceste caractere cu un singur clic dreapta!
@@ -94,8 +92,6 @@ Descărcați repository-ul, fie prin `Download ZIP` de pe buton `<> Code`, fie d
 ### Adăugarea unei pictograme în meniul contextual
 
 Puteți adăuga o pictogramă (icon) la intrarea din meniul contextual în Windows Explorer, prin ajustarea corespunzătoare a Registrului Windows (Registry).
-
----
 
 ### 1. Cheia de Registru pentru aplicația dumneavoastră
 
@@ -109,8 +105,6 @@ HKEY_CLASSES_ROOT
 </pre>
 
 Această cheie reprezintă aplicația dumneavoastră în meniul contextual. **Valoarea** sa **implicită** definește textul care va fi afișat în meniul contextual, de exemplu `Înlocuire diacritice`.
-
----
 
 ### 2. Cheia de comandă
 
@@ -126,8 +120,6 @@ HKEY_CLASSES_ROOT
 
 **Valoarea implicită** a cheii `command` trebuie să conțină calea către fișierul dumneavoastră executabil (`.exe`) și placeholder-ul `"%1"`.
 
----
-
 ### 3. Adăugarea intrării pentru pictogramă
 
 În cadrul aceleiași chei `Diacritice`, dar în afara sub-cheii `command`, creați o nouă **valoare de șir de caractere** cu numele **`Icon`**.
@@ -135,8 +127,6 @@ HKEY_CLASSES_ROOT
 - **Cheie:** `HKEY_CLASSES_ROOT\*\shell\Diacritice`
 - **Nume:** `Icon`
 - **Valoare:** `"C:\Calea\Către\diacritice.ico"`
-
----
 
 ### Rezumatul structurii
 
